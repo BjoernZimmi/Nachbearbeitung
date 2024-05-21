@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { routerModule } from '../../module/router.module';
 
 @Component({
   selector: 'app-first',
   standalone: true,
-  imports: [],
-  templateUrl: './first.component.html',
-  styleUrl: './first.component.scss'
+  imports: [routerModule],
+  templateUrl: './first.component.html'
 })
 export class FirstComponent {
 
