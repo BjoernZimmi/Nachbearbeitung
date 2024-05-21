@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-child-b',
   standalone: true,
   imports: [],
-  templateUrl: './child-b.component.html',
-  styles: ``
+  templateUrl: './child-b.component.html'
 })
+
 export class ChildBComponent {
 
 }
