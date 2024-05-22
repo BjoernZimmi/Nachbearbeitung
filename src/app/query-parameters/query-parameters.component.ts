@@ -1,9 +1,6 @@
-import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-query-parameters',
