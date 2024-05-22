@@ -1,1 +1,18 @@
-<h3>Second Component</h3>
+<div style="border: 1px solid; padding: 4px;">
+    <h3>Second Component</h3>
+
+    <ul>
+        <li>
+            <a [routerLink]="['/query']" [queryParams]="{id: 1, sort: 'none'}" queryParamsHandling="merge">ID 1</a>
+        </li>
+
+        <li>
+            <a [routerLink]="['/query']" [queryParams]="{id: 2, sort: 'none'}" queryParamsHandling="preserve">ID 2</a>
+        </li>
+
+        <br>
+
+        <button (click)="queryParamsInTypeScript()">ID 3</button>
+
+    </ul>
+</div>
