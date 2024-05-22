@@ -1,6 +1,9 @@
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-query-parameters',
@@ -11,30 +14,30 @@ import { Observable, switchMap } from 'rxjs';
 
 export class QueryParametersComponent implements OnInit {
 
-  heroes$: Observable<Hero[]> | undefined;
-  selectedId: number | undefined;
-
-  heroes: Hero[] = [{
-    id: 1,
-    name: "First Hero"
-  }];
+  selectedId: Number | undefined;
+  loadId: Observable<Number> | undefined;
+  loadSort: Observable<Number> | undefined;
 
   constructor(private route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    // this.heroes$ = this.route.paramMap.pipe(
-    //   switchMap(params => {
-    //     this.selectedId = Number(params.get('id'));
-    //     return this.service.getHeroes();
-    //   })
-    // );
+
+    this.route.queryParams.subscribe(params => 
+      this.loadId = params['id']
+    )
+
+    this.route.queryParams.subscribe(params => 
+      this.loadSort = params['sort']
+    )
+
+    console.log(this.loadId);
+
+    if (this.loadId) {
+      this.selectedId = Number(this.loadId)
+    }
+    
   }
 
-};
-
-export interface Hero {
-  id: number,
-  name: string
-};
+}
