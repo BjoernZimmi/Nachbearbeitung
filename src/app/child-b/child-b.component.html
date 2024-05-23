@@ -1,11 +1,16 @@
-<h4>Child-B with directive</h4>
+<h3>Child-B with directive</h3>
 
-<br>
-
-<button (click)="isHighlightActive = !isHighlightActive">Activate Highlight</button>
-
-@if (isHighlightActive) {
-    <p appHighlight>Active</p>
-} @else if (!isHighlightActive) {
-    <p>Not Active</p>
-}
+<nav>
+    <ul style="list-style-type: none">
+        <li>
+            <button (click)="isHighlightActive = !isHighlightActive">Activate Highlight</button>
+        </li>
+        <li>
+            @if (isHighlightActive) {
+            <p appHighlight>Active</p>
+            } @else if (!isHighlightActive) {
+            <p>Not Active</p>
+            }
+        </li>
+    </ul>
+</nav>
