@@ -11,5 +11,6 @@ import { HighlightDirective } from '../direktive/highlight.directive';
 export class ChildBComponent {
 
   isHighlightActive: boolean = false;
+  color = '';
 
 }

@@ -7,10 +7,22 @@
         </li>
         <li>
             @if (isHighlightActive) {
-            <p appHighlight>Active</p>
+                  <p [appHighlight]="color">Highlight me!</p>
+                  <div>
+                    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+                    <input type="radio" name="colors" (click)="color='red'">Red
+                    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+                  </div>
             } @else if (!isHighlightActive) {
             <p>Not Active</p>
             }
+        </li>
+    </ul>
+</nav>
+<nav>
+    <ul style="list-style-type: none">
+        <li>
+
         </li>
     </ul>
 </nav>
