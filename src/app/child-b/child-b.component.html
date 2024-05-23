@@ -1,1 +1,11 @@
-<h4>Child-B loaded</h4>
+<h4>Child-B with directive</h4>
+
+<br>
+
+<button (click)="isHighlightActive = !isHighlightActive">Activate Highlight</button>
+
+@if (isHighlightActive) {
+    <p appHighlight>Active</p>
+} @else if (!isHighlightActive) {
+    <p>Not Active</p>
+}
