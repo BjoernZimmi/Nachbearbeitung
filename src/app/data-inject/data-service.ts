@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 
-export class DataServiceService {
+export class DataService {
   private data!: string;
 
   constructor() { }
