@@ -11,4 +11,5 @@ import { ServiceInjectionComponent } from "./service-injection/service-injection
 })
 export class AppComponent {
   title = 'Nachbearbeitungs App';
+  activateDataInjection = false;
 }

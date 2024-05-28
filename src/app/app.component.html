@@ -8,7 +8,15 @@
 
 <br><br>
 
-<app-service-injection></app-service-injection>
 
 <br><br>
 <router-outlet />
+
+<br>
+
+<input type="checkbox" value="activateDataInjection" (click)="activateDataInjection = !activateDataInjection">
+<label style="font-size:x-small; color: aquamarine;">activate data injection</label>
+
+@if (activateDataInjection) {
+  <app-service-injection></app-service-injection>
+}
