@@ -1,4 +1,12 @@
 <h3>Imput Component</h3>
 <br>
-<input>
+<input style="margin-left: 8px;" type="text" (input)="setInputData($event)">
 <label> Input</label>
+
+<br><br>
+
+<ul style="list-style-type: none;">
+    <li>
+        {{getDataString}}
+    </li>
+</ul>
