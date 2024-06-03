@@ -1,18 +1,19 @@
-import { Component, OnInit, effect, runInInjectionContext, signal } from '@angular/core';
+import { Component, Inject, OnInit, signal } from '@angular/core';
 import { DataService } from '../data-service';
+import { MY_TOKEN } from '../../../assets/token/token';
 
 @Component({
   selector: 'app-signal',
   standalone: true,
   imports: [],
   templateUrl: './signal.component.html',
-  styles: ``
+  providers: [{provide: MY_TOKEN, useValue: 'Hello DACHPC !!!'}]
 })
 export class SignalComponent implements OnInit {
 
   dataSignal = signal<string>('');
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, @Inject(MY_TOKEN) private token: string) {}
 
   ngOnInit(): void {
     // Initialisiere das Signal mit dem aktuellen Wert
@@ -25,5 +26,8 @@ export class SignalComponent implements OnInit {
         this.dataSignal.set(newData);
       }
     }, 1000); // Überprüft alle 1000 Millisekunden (1 Sekunde)
+
+    console.log(this.token);
   }
+  
 }
