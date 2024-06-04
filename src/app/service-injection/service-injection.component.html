@@ -1,14 +1,18 @@
-<p>Daten per Service injizieren </p>
+<h3>Daten per Service injizieren</h3>
 <br>
+
+@if (childData) {
+    <div>Child Data loaded: {{childData}}</div>
+}
 
 <div style="width: 100%; display: flex;">
 
     <div style="flex: auto;">
-        <app-input></app-input>
+        <app-input [parantData]="data"></app-input>
     </div>
 
     <div style="flex: auto;">
-        <app-load></app-load>
+        <app-load (dataEmitter)="recievdata($event)"></app-load>
     </div>
 
     <div style="flex: auto;">

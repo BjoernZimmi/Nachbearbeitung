@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../data-service';
 import { FormsModule } from '@angular/forms';
 
@@ -14,6 +14,7 @@ export class InputComponent implements OnInit {
 
   inputFromHtml: string = '';
   getDataString = '';
+  @Input() parantData!: string;
 
   constructor(public dataService: DataService) {
   }

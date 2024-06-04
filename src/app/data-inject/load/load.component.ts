@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, DoCheck, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataService } from '../data-service';
 
 @Component({
@@ -9,6 +9,8 @@ import { DataService } from '../data-service';
   styles: ``
 })
 export class LoadComponent implements OnInit, DoCheck {
+
+  @Output() dataEmitter = new EventEmitter<string>();
 
   getDataFromService: string = '';
 
@@ -22,6 +24,10 @@ export class LoadComponent implements OnInit, DoCheck {
   ngDoCheck(): void {
     this.getDataFromService = this.dataService.getData();
 
+  }
+
+  sendData() {
+    this.dataEmitter.emit(this.dataService.getData());
   }
 
 }
