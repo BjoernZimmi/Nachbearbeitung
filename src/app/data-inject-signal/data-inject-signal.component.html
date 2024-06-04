@@ -1,0 +1,13 @@
+<div>
+    <h1>Signal Message-Service</h1>
+
+    @for (message of signalDataService.messages(); track $index) {
+        <ul>
+            <li>{{message}}</li>
+        </ul>
+    }
+
+    <input [(ngModel)]="newMessage">
+    <button (click)="addMessage()">Add Message</button>
+    <button (click)="clearMessage()">Clear Message</button>
+</div>

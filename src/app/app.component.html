@@ -13,10 +13,23 @@
 <br>
 
 <input type="checkbox" value="activateDataInjection" (click)="activateDataInjection = !activateDataInjection">
-<label style="font-size:x-small; color: aquamarine;">activate data injection</label>
+<label style="font-size:x-small; color: aquamarine;">activate data injection without RxJS</label>
 
 @if (activateDataInjection) {
 <div class="whiteBoxForComponent" style="padding: 10px;">
   <app-service-injection></app-service-injection>
+</div>
+}
+
+<br>
+<br>
+<br>
+
+<input type="checkbox" value="activateDataInjection" (click)="activateDataInjectionSignal = !activateDataInjectionSignal">
+<label style="font-size:x-small; color: aquamarine;">activate data injection with Signal</label>
+
+@if (activateDataInjectionSignal) {
+<div class="whiteBoxForComponent" style="padding: 10px;">
+  <app-data-inject-signal></app-data-inject-signal>
 </div>
 }
