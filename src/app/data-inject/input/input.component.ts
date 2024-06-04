@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 
 export class InputComponent {
 
-  inputFromHtml: string = '';
   @Input() parantData!: string;
 
   constructor(public dataService: DataService) {
@@ -21,7 +20,6 @@ export class InputComponent {
   setInputData(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     this.dataService.setData(inputElement.value);
-    this.inputFromHtml = inputElement.value;
   }
 
 }
