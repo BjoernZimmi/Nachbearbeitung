@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { InputComponent } from "../data-inject/input/input.component";
 import { LoadComponent } from "../data-inject/load/load.component";
 import { SignalComponent } from "../data-inject/signal/signal.component";
@@ -11,25 +11,18 @@ import { DataService } from '../data-inject/data-service';
     imports: [InputComponent, LoadComponent, SignalComponent]
 })
 
-export class ServiceInjectionComponent implements DoCheck {
+export class ServiceInjectionComponent {
 
     data = '';
     childData!: string;
 
-    constructor(private dataService: DataService) {}
+    constructor(private dataService: DataService) { }
 
-    ngOnInit() {
-
-    }
-
-    ngDoCheck(): void {
-        this.data = this.dataService.getData();
-
-    }
 
     recievdata(data: string) {
-        return this.childData = data;
+        this.childData = data;
+        if(this.childData) {
+            this.data = this.dataService.getData();
+        }
     }
-    
-
 }

@@ -43,3 +43,13 @@ a:hover {
 div {
     font-size: small;
 }
+
+.whiteBoxForComponent {
+    border-color: white;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-radius: 30px;
+    max-width: 100%;
+    padding: 3px;
+    margin: 5px;
+}

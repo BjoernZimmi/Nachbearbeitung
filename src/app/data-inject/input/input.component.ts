@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DataService } from '../data-service';
 import { FormsModule } from '@angular/forms';
 
@@ -10,22 +10,17 @@ import { FormsModule } from '@angular/forms';
   styles: ``
 })
 
-export class InputComponent implements OnInit {
+export class InputComponent {
 
   inputFromHtml: string = '';
-  getDataString = '';
   @Input() parantData!: string;
 
   constructor(public dataService: DataService) {
   }
 
-  ngOnInit(): void {
-  }
-
   setInputData(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     this.dataService.setData(inputElement.value);
-    this.getDataString = this.dataService.getData();
     this.inputFromHtml = inputElement.value;
   }
 

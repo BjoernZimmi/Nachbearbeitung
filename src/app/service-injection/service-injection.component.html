@@ -1,21 +1,22 @@
 <h3>Angular Services Injection</h3>
-<br>
 
 @if (childData) {
-    <div>Child Data loaded: {{childData}}</div>
+    <div style="margin-left: 8px;">Child Data loaded: {{childData}}</div>
+    <br>
 }
+<br>
 
 <div style="width: 100%; display: flex;">
 
-    <div style="flex: auto;">
+    <div style="flex: auto;" class="whiteBoxForComponent">
         <app-input [parantData]="data"></app-input>
     </div>
 
-    <div style="flex: auto;">
+    <div style="flex: auto;" class="whiteBoxForComponent">
         <app-load (dataEmitter)="recievdata($event)"></app-load>
     </div>
 
-    <div style="flex: auto;">
+    <div style="flex: auto;" class="whiteBoxForComponent">
         <app-signal></app-signal>
     </div>
 
