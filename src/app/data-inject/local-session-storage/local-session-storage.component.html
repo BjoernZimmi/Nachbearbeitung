@@ -1,0 +1,16 @@
+<h1>Local- and Sessionstorage Component</h1>
+<div style="margin-left: 8px;">
+    <input #storage>
+    <button (click)="setStorage(storage)">Send storage</button>
+
+</div>
+
+<br><br>
+
+<div style="margin-left: 8px;">
+    localStorage is: {{localValue}}
+</div>
+<div style="margin-left: 8px;">
+    sessionStorage is: {{getLocalStorage()}}
+</div>
+<br>
