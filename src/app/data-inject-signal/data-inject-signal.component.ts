@@ -1,4 +1,4 @@
-import { Component, NgModuleRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { SignalDataService } from './service/signal-data.service';
 import { FormsModule } from '@angular/forms';
 
