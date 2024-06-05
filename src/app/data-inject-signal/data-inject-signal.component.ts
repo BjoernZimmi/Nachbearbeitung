@@ -15,15 +15,17 @@ export class DataInjectSignalComponent {
 
   constructor(public signalDataService: SignalDataService) {}
 
-  addMessage() {
-    if (this.newMessage.trim()) {
-      this.signalDataService.addMessage(this.newMessage);
-      this.newMessage = '';
+  addMessage(inputElement: HTMLInputElement) {
+    const addNewMessage = inputElement.value.trim();
+    if (addNewMessage) {
+      this.signalDataService.addMessage(addNewMessage);
+      inputElement.value = '';
     }
   }
 
-  clearMessage() {
+  clearMessage(inputElement: HTMLInputElement) {
     this.signalDataService.clearMessages();
+    inputElement.value = '';
   }
 
 }

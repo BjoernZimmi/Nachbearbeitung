@@ -7,7 +7,7 @@
         </ul>
     }
 
-    <input [(ngModel)]="newMessage">
-    <button (click)="addMessage()">Add Message</button>
-    <button (click)="clearMessage()">Clear Message</button>
+    <input #messageInput>
+    <button (click)="addMessage(messageInput)">Add Message</button>
+    <button (click)="clearMessage(messageInput)">Clear Message</button>
 </div>
