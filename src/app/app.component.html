@@ -29,7 +29,19 @@
 <label style="font-size:x-small; color: aquamarine;">activate data injection with Signal</label>
 
 @if (activateDataInjectionSignal) {
-<div class="whiteBoxForComponent" style="padding: 10px;">
-  <app-data-inject-signal></app-data-inject-signal>
+<div style="padding: 10px;">
+  <div style="width: 100%; display: flex;">
+
+    <div style="flex: auto;" class="whiteBoxForComponent">
+      <app-data-inject-signal></app-data-inject-signal>
+    </div>
+
+    <div style="flex: auto;" class="whiteBoxForComponent">
+      <app-local-session-storage></app-local-session-storage>
+
+    </div>
+
+
+</div>
 </div>
 }

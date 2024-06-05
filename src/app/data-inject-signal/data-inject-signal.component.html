@@ -2,14 +2,15 @@
     <h1>Signal Message-Service</h1>
 
     @for (message of signalDataService.messages(); track $index) {
-        <ul>
-            <li>{{message}}</li>
-        </ul>
+    <ul>
+        <li>{{message}}</li>
+    </ul>
     }
 
     <div style="margin-left: 8px;">
         <input #messageInput>
-    <button (click)="addMessage(messageInput)">Add Message</button>
-    <button (click)="clearMessage(messageInput)">Clear Message</button>
+        <button (click)="addMessage(messageInput)">Add Message</button>
+        <button (click)="clearMessage(messageInput)">Clear Message</button>
     </div>
+    <br>
 </div>
