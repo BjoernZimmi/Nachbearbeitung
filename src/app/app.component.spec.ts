@@ -1,10 +1,38 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DataInjectSignalComponent } from './data-inject-signal/data-inject-signal.component';
+import { LocalSessionStorageComponent } from './data-inject/local-session-storage/local-session-storage.component';
+import { ServiceInjectionComponent } from './service-injection/service-injection.component';
+import { ActivatedRoute, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { of } from 'rxjs';
+import { routes } from './app.routes';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        RouterModule.forRoot(routes),
+        RouterOutlet,
+        RouterLink,
+        RouterLinkActive,
+        ServiceInjectionComponent,
+        DataInjectSignalComponent,
+        LocalSessionStorageComponent,
+        AppComponent
+      ],
+      providers: [
+        { 
+          provide: ActivatedRoute, 
+          useValue: {
+            params: of({}), 
+            snapshot: {
+              paramMap: {
+                get: () => null
+              }
+            }
+          }
+        }
+      ]
     }).compileComponents();
   });
 
@@ -24,6 +52,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Nachbearbeitungs App');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Basic Route');
   });
 });
